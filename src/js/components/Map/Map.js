@@ -78,6 +78,7 @@ export function Map() {
       <div className="map">
         <MapGL
           style={mapGl}
+          mapStyle={mapStyle}
           {...viewport}
           mapboxApiAccessToken={MAPBOX_TOKEN}
           onViewportChange={(nextViewport) => setViewport(nextViewport)}
