@@ -33,6 +33,13 @@ export function Map() {
     padding: "10px",
   };
 
+  // inline style for MapGl
+  const mapGl = {
+    borderStyle: "solid",
+    borderWidth: "10px",
+    borderColor: "#dcdcdc",
+  };
+
   // usIncome Layer
   const fill = {
     id: "usIncome",
@@ -56,24 +63,27 @@ export function Map() {
   return (
     <div className="app" style={divStyle}>
       <User />
-      <MapGL
-        {...viewport}
-        mapboxApiAccessToken={MAPBOX_TOKEN}
-        onViewportChange={(nextViewport) => setViewport(nextViewport)}
-      >
-        <Source id="usIncome" type="geojson" data={usIncome}>
-          <Layer {...fill} />
-        </Source>
+      <div className="map">
+        <MapGL
+          style={mapGl}
+          {...viewport}
+          mapboxApiAccessToken={MAPBOX_TOKEN}
+          onViewportChange={(nextViewport) => setViewport(nextViewport)}
+        >
+          <Source id="usIncome" type="geojson" data={usIncome}>
+            <Layer {...fill} />
+          </Source>
 
-        <Source id="stateCapitals" type="geojson" data={stateCapitals}>
-          <Layer {...circle} />
-        </Source>
-        <div style={navStyle}>
-          <NavigationControl
-            onViewportChange={(nextViewport) => setViewport(nextViewport)}
-          />
-        </div>
-      </MapGL>
+          <Source id="stateCapitals" type="geojson" data={stateCapitals}>
+            <Layer {...circle} />
+          </Source>
+          <div style={navStyle}>
+            <NavigationControl
+              onViewportChange={(nextViewport) => setViewport(nextViewport)}
+            />
+          </div>
+        </MapGL>
+      </div>
     </div>
   );
 }
