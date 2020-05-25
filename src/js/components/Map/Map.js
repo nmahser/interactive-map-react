@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import MapGL, { Source, Layer } from "react-map-gl";
+import MapGL, { Source, Layer, NavigationControl } from "react-map-gl";
 import { usIncome } from "../../../data/incomeData";
 import { stateCapitals } from "../../../data/stateCapitals";
 import { BASIC_STYLE } from "./Style";
@@ -58,6 +58,9 @@ export function Map() {
         <Source id="stateCapitals" type="geojson" data={stateCapitals}>
           <Layer {...circle} />
         </Source>
+        <NavigationControl
+          onViewportChange={(nextViewport) => setViewport(nextViewport)}
+        />
       </MapGL>
     </div>
   );
