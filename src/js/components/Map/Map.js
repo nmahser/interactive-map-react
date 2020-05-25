@@ -5,6 +5,7 @@ import { usIncome } from "../../../data/incomeData";
 import { stateCapitals } from "../../../data/stateCapitals";
 import { BASIC_STYLE } from "./Style";
 import { apiKeyMapBox } from "../../../config";
+import { User } from "../User/User";
 
 export function Map() {
   // hooks for viewport
@@ -54,6 +55,7 @@ export function Map() {
 
   return (
     <div className="app" style={divStyle}>
+      <User />
       <MapGL
         {...viewport}
         mapboxApiAccessToken={MAPBOX_TOKEN}
