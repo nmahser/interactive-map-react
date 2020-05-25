@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
+import "./user.css";
 
 export function User() {
   // hooks for random user data
