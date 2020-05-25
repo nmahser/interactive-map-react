@@ -60,6 +60,14 @@ export function Map() {
     type: "circle",
     source: "stateCapitals",
     paint: {
+      "circle-radius": {
+        stops: [
+          // zoom is 5 -> circle radius will be 5px
+          [5, 5],
+          // zoom is 10 -> circle radius will be 10px
+          [10, 10],
+        ],
+      },
       "circle-color": "#B22222",
     },
   };
