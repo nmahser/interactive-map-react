@@ -1,3 +1,5 @@
+import { apiKeyMapTiller } from "../../../config";
+
 export const BASIC_STYLE = {
   version: 8,
   name: "TEST",
@@ -11,14 +13,13 @@ export const BASIC_STYLE = {
     openmaptiles: {
       type: "vector",
       url:
-        `https://api.maptiler.com/tiles/v3/tiles.json?key=` +
-        process.env.REACT_APP_API_KEY,
+        `https://api.maptiler.com/tiles/v3/tiles.json?key=` + apiKeyMapTiller,
     },
     landcover: {
       type: "vector",
       url:
         `https://api.maptiler.com/tiles/landcover/tiles.json?key=` +
-        process.env.REACT_APP_API_KEY,
+        apiKeyMapTiller,
     },
     maptiler_attribution: {
       type: "vector",
@@ -30,7 +31,7 @@ export const BASIC_STYLE = {
     "https://api.maptiler.com/maps/80a453ab-a326-4c5b-81d3-6121800751fa/sprite",
   glyphs:
     `https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=` +
-    process.env.REACT_APP_API_KEY,
+    apiKeyMapTiller,
   layers: [
     {
       id: "background",
