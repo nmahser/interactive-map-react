@@ -17,6 +17,10 @@ export function Map() {
     zoom: 3,
   });
 
+  // hooks for mapStyle. I couldn't see any reason to create state for mapStyle since state doesn't change.
+  //Instructions tell me to do it...
+  const [mapStyle, setStyle] = useState(BASIC_STYLE);
+
   const MAPBOX_TOKEN = apiKeyMapBox;
 
   // inline style for div tag below
