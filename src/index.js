@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Map} from "./js/components/Map";
+import { Map } from "./js/components/Map/Map";
 
-// Render the Map Component here
+ReactDOM.render(<Map />, document.getElementById("root"));
