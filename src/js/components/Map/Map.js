@@ -24,6 +24,14 @@ export function Map() {
     position: "relative",
   };
 
+  // inline style for navigation control
+  const navStyle = {
+    position: "absolute",
+    top: "0",
+    right: "0",
+    padding: "10px",
+  };
+
   // usIncome Layer
   const fill = {
     id: "usIncome",
@@ -58,9 +66,11 @@ export function Map() {
         <Source id="stateCapitals" type="geojson" data={stateCapitals}>
           <Layer {...circle} />
         </Source>
-        <NavigationControl
-          onViewportChange={(nextViewport) => setViewport(nextViewport)}
-        />
+        <div style={navStyle}>
+          <NavigationControl
+            onViewportChange={(nextViewport) => setViewport(nextViewport)}
+          />
+        </div>
       </MapGL>
     </div>
   );
